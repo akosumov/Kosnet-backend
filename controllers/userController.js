@@ -1,4 +1,5 @@
 const { User, Thought } = require('../models')
+var cors = require('cors')
 
 module.exports = {
 	//Get all users
