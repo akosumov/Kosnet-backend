@@ -8,14 +8,10 @@ const app = express()
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-app.use(cors())
-app.get(
-	'/api/users',
-	cors({ origin: ['https://kosnet-production.up.railway.app/api/users'] }),
-	(req, res) => {
-		res.send({ status: 'ok' })
-	}
-)
+app.use(cors({ origin: ['https://kosnet-production.up.railway.app'] }))
+app.get('/api/users', cors(), (req, res) => {
+	res.send({ status: 'ok' })
+})
 app.use(routes)
 
 db.once('open', () => {
