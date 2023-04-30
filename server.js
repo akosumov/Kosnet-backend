@@ -6,14 +6,14 @@ const cors = require('cors')
 const PORT = process.env.PORT || 5000
 const app = express()
 
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
-app.use(routes)
 app.use(
 	cors({
 		origin: ['https://kosnet-production.up.railway.app/api/users'],
 	})
 )
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(routes)
 
 db.once('open', () => {
 	app.listen(PORT, () => {
