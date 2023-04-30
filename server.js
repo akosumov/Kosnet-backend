@@ -13,9 +13,7 @@ app.use(
 		credentials: true,
 	})
 )
-app.get('/api/users', cors(), (req, res) => {
-	res.send({ status: 'ok' })
-})
+
 app.use(routes)
 
 db.once('open', () => {
