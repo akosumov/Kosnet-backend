@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(routes)
 app.use(
 	cors({
-		origin: ['*'],
+		origin: ['https://kosnet-production.up.railway.app'],
 	})
 )
 
