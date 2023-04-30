@@ -10,7 +10,6 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(
 	cors({
-		origin: ['https://kosnet-production.up.railway.app'],
 		credentials: true,
 	})
 )
